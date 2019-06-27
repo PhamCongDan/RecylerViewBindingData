@@ -2,6 +2,7 @@ package danpc.rikkei.viewmodel;
 
 import android.databinding.ObservableArrayList;
 import android.view.View;
+import android.widget.Toast;
 
 
 import java.util.Random;
@@ -30,9 +31,11 @@ public class UserListModel {
 
     public void add(View v) {
         add(new User("a", "danpc"));
+        Toast.makeText(v.getContext(), "da them", Toast.LENGTH_SHORT).show();
     }
 
     public void remove (View v) {
         lstUser.remove(0);
+        Toast.makeText(v.getContext(), "da xoa", Toast.LENGTH_SHORT).show();
     }
 }
