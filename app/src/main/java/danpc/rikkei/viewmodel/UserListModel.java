@@ -10,22 +10,28 @@ import java.util.Random;
 import danpc.rikkei.model.User;
 
 public class UserListModel {
+    private MainActivityContact.View view;
     public ObservableArrayList<User> lstUser = new ObservableArrayList<>();
-    private int sizeUser = 500;
+    private int sizeUser = 10;
 
-    public UserListModel() {
-        Random r = new Random();
-        for (int i = 0; i <sizeUser; i++) {
-            User user = new User();
-            String firstName = "dan " + i;
-            String lastName = "pc " + i;
+    public UserListModel(MainActivityContact.View view) {
+        this.view = view;
+        lstUser.add(new User("1","11"));
+        lstUser.add(new User("2","22"));
 
-            user.setFirstName(firstName);
-            user.setLastName(lastName);
-        }
+//        Random r = new Random();
+//        for (int i = 0; i <sizeUser; i++) {
+//            User user = new User();
+//            String firstName = "dan " + r.nextInt();
+//            String lastName = "pc " + r.nextInt();
+//
+//            user.setFirstName(firstName);
+//            user.setLastName(lastName);
+//            add(user);
+//        }
     }
 
-    private void add(User user) {
+    public void add(User user) {
         lstUser.add(user);
     }
 
@@ -37,5 +43,10 @@ public class UserListModel {
     public void remove (View v) {
         lstUser.remove(0);
         Toast.makeText(v.getContext(), "da xoa", Toast.LENGTH_SHORT).show();
+    }
+
+    public void addUser (User user) {
+        this.view.showData(user);
+        lstUser.add(user);
     }
 }

@@ -15,14 +15,12 @@
         android:weightSum="1">
 
         <TextView
-            android:id="@+id/txtFirstName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.3"
             android:text="@{user.firstName}" />
 
         <TextView
-            android:id="@+id/txtLastName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.3"
